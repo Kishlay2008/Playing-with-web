@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard & Mouse Event Listeners</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #area {
+            width: 400px;
+            height: 200px;
+            border: 2px dashed gray;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        #circle {
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            top: 80px;
+            left: 180px;
+        }
+
+        .active {
+            background-color: red;
+        }
+
+        #status {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mouse & Keyboard Interactivity using Event Listeners</h2>
+
+    <button id="enable">Enable Keyboard Control</button>
+    <button id="disable">Disable Keyboard Control</button>
+
+    <div id="area">
+        <div id="circle"></div>
+    </div>
+
+    <p id="status">Keyboard control is OFF</p>
+
+    <script>
+        const circle = document.getElementById("circle");
+        const status = document.getElementById("status");
+
+        let topPos = 80;
+        let leftPos = 180;
+
+        // Mouse event
+        circle.addEventListener("mouseenter", function () {
+            circle.classList.add("active");
+            status.textContent = "Mouse is over the circle";
+        });
+
+        circle.addEventListener("mouseleave", function () {
+            circle.classList.remove("active");
+            status.textContent = "Mouse left the circle";
+        });
+
+        // Keyboard function
+        function moveCircle(event) {
+            if (event.key === "ArrowUp") topPos -= 10;
+            if (event.key === "ArrowDown") topPos += 10;
+            if (event.key === "ArrowLeft") leftPos -= 10;
+            if (event.key === "ArrowRight") leftPos += 10;
+
+            circle.style.top = topPos + "px";
+            circle.style.left = leftPos + "px";
+        }
+
+        // Add keyboard event
+        document.getElementById("enable").addEventListener("click", function () {
+            document.addEventListener("keydown", moveCircle);
+            status.textContent = "Keyboard control is ON (Use Arrow Keys)";
+        });
+
+        // Remove keyboard event
+        document.getElementById("disable").addEventListener("click", function () {
+            document.removeEventListener("keydown", moveCircle);
+            status.textContent = "Keyboard control is OFF";
+        });
+    </script>
+
+</body>
+</html>
