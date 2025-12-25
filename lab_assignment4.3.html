@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Delegation and addEventListener</title>
+</head>
+<body>
+    <h1>Event Delegation and addEventListener</h1>
+
+    <h2>Theory</h2>
+    <p><strong>1. Event Delegation:</strong></p>
+    <p>
+        Event delegation is a technique where a parent element listens for events
+        from its child elements. Instead of adding separate event listeners to each
+        child, the parent detects which child triggered the event. This reduces
+        memory usage and works for dynamically added elements.
+    </p>
+
+    <p><strong>2. addEventListener:</strong></p>
+    <p>
+        The <code>addEventListener</code> method is used to attach an event handler
+        to an HTML element. It allows specifying the event type, the function to execute,
+        and optional settings like capturing or once. It is more flexible than older methods
+        like <code>onclick</code>.
+    </p>
+
+    <h2>Demo: Click on a List Item</h2>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <div id="output" style="margin-top:20px; font-weight:bold;"></div>
+
+    <script>
+        // Select the parent element
+        const list = document.getElementById("myList");
+        const outputDiv = document.getElementById("output");
+
+        // Add event listener to the parent (event delegation)
+        list.addEventListener("click", function(event) {
+            if(event.target.tagName === "LI") { // Check if a child <li> was clicked
+                outputDiv.innerHTML = "You clicked on: " + event.target.textContent;
+            }
+        });
+    </script>
+</body>
+</html>

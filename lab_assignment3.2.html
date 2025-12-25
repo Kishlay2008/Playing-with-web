@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Control Flow Statements</title>
+</head>
+<body>
+
+  <h2>JavaScript Control Flow Statements</h2>
+
+  <script>
+    // ============================
+    // INTRODUCTION
+    // ============================
+    document.write("<h3>Introduction</h3>");
+    document.write(
+      "Control Flow statements in JavaScript determine the order in which statements are executed. " +
+      "They allow decision-making, looping, and branching in a program.<br><br>"
+    );
+
+    // ============================
+    // TYPES OF CONTROL FLOW
+    // ============================
+    document.write("<h3>Types of Control Flow Statements</h3>");
+    document.write(
+      "1. Conditional Statements (if, if-else, switch)<br>" +
+      "2. Looping Statements (for, while, do-while)<br>" +
+      "3. Jump Statements (break, continue, return)<br><br>"
+    );
+
+    // ============================
+    // LOOPING STATEMENTS
+    // ============================
+    document.write("<h3>Looping Statements</h3>");
+    document.write(
+      "Looping statements are used to execute a block of code repeatedly as long as a condition is true.<br><br>"
+    );
+
+    // ============================
+    // FOR LOOP
+    // ============================
+    document.write("<h4>for Loop</h4>");
+    document.write(
+      "The for loop is used when the number of iterations is known in advance.<br>"
+    );
+    document.write("Example:<br>");
+
+    for (let i = 1; i <= 3; i++) {
+      document.write("for loop iteration: " + i + "<br>");
+    }
+    document.write("<br>");
+
+    // ============================
+    // WHILE LOOP
+    // ============================
+    document.write("<h4>while Loop</h4>");
+    document.write(
+      "The while loop executes as long as the given condition is true. " +
+      "The condition is checked before the loop body executes.<br>"
+    );
+    document.write("Example:<br>");
+
+    let j = 1;
+    while (j <= 3) {
+      document.write("while loop iteration: " + j + "<br>");
+      j++;
+    }
+    document.write("<br>");
+
+    // ============================
+    // DO-WHILE LOOP
+    // ============================
+    document.write("<h4>do-while Loop</h4>");
+    document.write(
+      "The do-while loop executes the loop body at least once, " +
+      "because the condition is checked after execution.<br>"
+    );
+    document.write("Example:<br>");
+
+    let k = 1;
+    do {
+      document.write("do-while loop iteration: " + k + "<br>");
+      k++;
+    } while (k <= 3);
+
+    document.write("<br>");
+
+    // ============================
+    // DIFFERENCE BETWEEN LOOPS
+    // ============================
+    document.write("<h3>Difference between for, while, and do-while Loops</h3>");
+
+    document.write(
+      "<b>for loop:</b> Condition is checked before execution and is best when the number of iterations is known.<br>" +
+      "<b>while loop:</b> Condition is checked before execution and is used when iterations depend on a condition.<br>" +
+      "<b>do-while loop:</b> Executes at least once even if the condition is false.<br><br>"
+    );
+
+    // ============================
+    // CONCLUSION
+    // ============================
+    document.write("<h3>Conclusion</h3>");
+    document.write(
+      "Control Flow statements help control the execution of a program. " +
+      "Among looping statements, for, while, and do-while loops differ mainly in how and when conditions are checked."
+    );
+
+  </script>
+
+</body>
+</html>

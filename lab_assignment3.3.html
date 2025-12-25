@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Object Model (DOM)</title>
+</head>
+<body>
+
+    <h1>Document Object Model (DOM)</h1>
+
+    <h2>Theory</h2>
+    <p>
+        The Document Object Model (DOM) is a programming interface that represents
+        an HTML document as a tree structure. In the DOM, each HTML element is
+        treated as an object that can be accessed and manipulated using JavaScript.
+        The DOM allows us to change the content, structure, and style of a web page
+        dynamically.
+    </p>
+
+    <h2>Selecting Elements Using DOM</h2>
+    <p>
+        JavaScript can select HTML elements using methods such as
+        getElementById, getElementsByClassName, and querySelector.
+        Once selected, the elements can be modified.
+    </p>
+
+    <h2>innerText</h2>
+    <p>
+        The <b>innerText</b> property is used to change or retrieve only the
+        text content of an HTML element. It does not include HTML tags.
+    </p>
+
+    <h2>innerHTML</h2>
+    <p>
+        The <b>innerHTML</b> property is used to change or retrieve the HTML
+        content inside an element. It can include HTML tags.
+    </p>
+
+    <h2>Example</h2>
+
+    <p id="textExample">Original Text</p>
+    <div id="htmlExample">Original Content</div>
+
+    <button onclick="changeText()">Change Using innerText</button>
+    <button onclick="changeHTML()">Change Using innerHTML</button>
+
+    <script>
+        function changeText() {
+            document.getElementById("textExample").innerText =
+                "Text changed using innerText";
+        }
+
+        function changeHTML() {
+            document.getElementById("htmlExample").innerHTML =
+                "<b>Content changed using innerHTML</b>";
+        }
+    </script>
+
+    <h2>Conclusion</h2>
+    <p>
+        The DOM allows JavaScript to interact with HTML elements.
+        Properties like innerText and innerHTML are used to modify
+        the content of elements dynamically.
+    </p>
+
+</body>
+</html>

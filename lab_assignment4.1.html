@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Array Methods using document.write()</title>
+</head>
+<body>
+
+<h2>JavaScript Array Methods</h2>
+
+<script>
+    // Initial array
+    let fruits = ["Apple", "Banana", "Orange"];
+    document.write("<b>Initial Array:</b> " + fruits + "<br><br>");
+
+    // push() - add element at the end
+    fruits.push("Mango");
+    document.write("<b>After push('Mango'):</b> " + fruits + "<br><br>");
+
+    // pop() - remove last element
+    let poppedFruit = fruits.pop();
+    document.write("<b>After pop():</b> " + fruits + "<br>");
+    document.write("<b>Removed element:</b> " + poppedFruit + "<br><br>");
+
+    // shift() - remove first element
+    let shiftedFruit = fruits.shift();
+    document.write("<b>After shift():</b> " + fruits + "<br>");
+    document.write("<b>Removed element:</b> " + shiftedFruit + "<br><br>");
+
+    // unshift() - add element at the beginning
+    fruits.unshift("Pineapple");
+    document.write("<b>After unshift('Pineapple'):</b> " + fruits + "<br><br>");
+
+    // Final array
+    document.write("<b>Final Array:</b> " + fruits);
+</script>
+
+</body>
+</html>

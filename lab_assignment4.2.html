@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Promises and Async/Await</title>
+</head>
+<body>
+    <h1>JavaScript Promises and Async/Await</h1>
+
+    <h2>Theory</h2>
+    <p><strong>1. Promises in JavaScript:</strong></p>
+    <p>
+        A Promise is an object that represents the eventual completion (or failure)
+        of an asynchronous operation and its resulting value. It has three states:
+        Pending (operation not finished), Fulfilled (operation successful), Rejected (operation failed).
+    </p>
+
+    <p><strong>2. Async/Await:</strong></p>
+    <p>
+        Async/Await is syntax built on top of Promises. <br>
+        - 'async' is used before a function to make it return a Promise.<br>
+        - 'await' is used inside an async function to wait for a Promise to resolve.<br>
+        Benefits: Cleaner code, easier to read, better error handling with try/catch.
+    </p>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+
+    <script>
+        // Function returning a Promise
+        function getPromiseData() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("Data fetched successfully!");
+                }, 2000);
+            });
+        }
+
+        const outputDiv = document.getElementById("output");
+
+        // Using Promise with then/catch
+        getPromiseData()
+            .then(result => {
+                outputDiv.innerHTML += "<p>Using Promise: " + result + "</p>";
+            })
+            .catch(error => {
+                outputDiv.innerHTML += "<p>" + error + "</p>";
+            });
+
+        // Using Async/Await
+        async function fetchDataAsync() {
+            try {
+                let result = await getPromiseData();
+                outputDiv.innerHTML += "<p>Using Async/Await: " + result + "</p>";
+            } catch (error) {
+                outputDiv.innerHTML += "<p>" + error + "</p>";
+            }
+        }
+
+        fetchDataAsync();
+    </script>
+</body>
+</html>

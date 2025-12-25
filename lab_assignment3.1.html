@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>var vs let vs const</title>
+</head>
+<body>
+
+  <h2>JavaScript: var, let, and const</h2>
+
+  <script>
+    // =====================
+    // HOISTING
+    // =====================
+
+    document.write("<h3>Hoisting</h3>");
+
+    // var hoisting
+    document.write("<b>var:</b><br>");
+    document.write("Value of a before declaration: " + a + "<br>");
+    var a = 10;
+    document.write("Value of a after declaration: " + a + "<br><br>");
+
+    // let hoisting
+    document.write("<b>let:</b><br>");
+    try {
+      document.write(b + "<br>");
+    } catch (error) {
+      document.write("Error: let variable cannot be accessed before declaration<br>");
+    }
+    let b = 20;
+    document.write("Value of b after declaration: " + b + "<br><br>");
+
+    // const hoisting
+    document.write("<b>const:</b><br>");
+    try {
+      document.write(c + "<br>");
+    } catch (error) {
+      document.write("Error: const variable cannot be accessed before declaration<br>");
+    }
+    const c = 30;
+    document.write("Value of c after declaration: " + c + "<br><br>");
+
+
+    // =====================
+    // SCOPE
+    // =====================
+
+    document.write("<h3>Scope</h3>");
+
+    function scopeTest() {
+      if (true) {
+        var x = 1;    // function scope
+        let y = 2;    // block scope
+        const z = 3;  // block scope
+      }
+
+      document.write("var x (function scope): " + x + "<br>");
+
+      try {
+        document.write("let y: " + y + "<br>");
+      } catch (error) {
+        document.write("let y is block scoped and not accessible here<br>");
+      }
+
+      try {
+        document.write("const z: " + z + "<br>");
+      } catch (error) {
+        document.write("const z is block scoped and not accessible here<br>");
+      }
+    }
+
+    scopeTest();
+
+
+    // =====================
+    // REASSIGNMENT
+    // =====================
+
+    document.write("<h3>Reassignment</h3>");
+
+    var m = 5;
+    let n = 6;
+    const p = 7;
+
+    m = 50;
+    n = 60;
+
+    try {
+      p = 70;
+    } catch (error) {
+      document.write("const cannot be reassigned<br>");
+    }
+
+    document.write("var m: " + m + "<br>");
+    document.write("let n: " + n + "<br>");
+    document.write("const p: " + p + "<br>");
+
+  </script>
+
+</body>
+</html>
